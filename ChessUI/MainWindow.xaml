@@ -1,0 +1,90 @@
+﻿<Window x:Class="ChessUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessUI"
+        mc:Ignorable="d"
+        Title="Chess" Width="600" SizeToContent="Height"
+        Icon="Assets/icon.ico"
+        WindowStartupLocation="CenterScreen"
+        Background="#101010" KeyDown="Window_KeyDown">
+
+    <Viewbox >
+        <Grid Height="600">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1" Grid.Row="0">
+
+            </Grid>
+
+            <Grid x:Name="BoardGrid" Grid.Column="0" Grid.RowSpan="3" Height="600" Width="600" MouseDown="BoardGrid_MouseDown">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Assets/Board.png"/>
+                </Grid.Background>
+
+                <UniformGrid x:Name="HighlightGrid" Rows="8" Columns="8">
+                </UniformGrid>
+
+                <UniformGrid x:Name="PieceGrid" Rows="8" Columns="8" RenderOptions.BitmapScalingMode="HighQuality">
+                </UniformGrid>
+
+                <ContentControl x:Name="MenuContainer"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Button x:Name="RuButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Height="30" Width ="45" Style="{StaticResource ButtonStyle}" Click="RuButton_Click">
+                    <Image Source="Assets/Ru.png" Width="35" Height="20" Stretch="Fill"/>
+                </Button>
+                <Button x:Name="EnButton" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Height="30" Width ="45" Style="{StaticResource ButtonStyle}" Click="EnButton_Click">
+                    <Image Source="Assets/En.png" Width="35" Height="20" Stretch="Fill"/>
+                </Button>
+                <Button x:Name="RulesBtn" Margin="10,-70,10,10" Height="30" Width ="100" Style="{StaticResource ButtonStyle}" Content="Rules" Click="RulesButton_Click"/>
+                <Grid VerticalAlignment="Bottom">
+                    <CheckBox x:Name ="TimeCheckbox" Content="With time?" Margin="10,0,10,0" Foreground="White"  Checked="TimeCheckBox_Checked" Unchecked="TimeCheckBox_Unchecked" />
+                    <StackPanel  Margin="0,20,0,0">
+                        <Label x:Name="TimeLabel" Content="Choose time value:" Foreground="White" VerticalAlignment="Center" />
+                        <ComboBox x:Name="TimeComboBox" Height="30" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="1">
+                            <ComboBoxItem Content="15:00"/>
+                            <ComboBoxItem Content="10:00"/>
+                            <ComboBoxItem Content="5:00"/>
+                            <ComboBoxItem Content="1:00"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+                <Grid Height="100" VerticalAlignment="Bottom">
+                    <Grid Height="50" VerticalAlignment="Top">
+                        <Label x:Name ="BlackSideLabel" Content="Black:" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="25" x:Name="BlackTimeLabel" Content="10:00"/>
+                    </Grid>
+                    <Grid Height="50" VerticalAlignment="Bottom">
+                        <Label x:Name="WhiteSideLabel" Content="White:" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <Label Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="25" x:Name="WhiteTimeLabel" Content="10:00"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="2"  Margin="10">
+                <Grid VerticalAlignment="Bottom">
+                    <Button Click="Rotate_Board" Height="30" Width ="50" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right">
+                        <Image Source="Assets/RefreshW.png" Width="20"/>
+                    </Button>
+                    <CheckBox x:Name="AutoRotateCheckbox" Content="Auto" Height="20" Foreground="White" HorizontalAlignment="Left" Checked="RotateCheckBox_Checked" Unchecked="RotateCheckBox_Unchecked"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>

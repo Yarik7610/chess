@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+    <StartupObject>ChessUI.App</StartupObject>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\BishopB.png" />
+    <None Remove="Assets\BishopW.png" />
+    <None Remove="Assets\Board.png" />
+    <None Remove="Assets\Capture.wav" />
+    <None Remove="Assets\Castle.wav" />
+    <None Remove="Assets\Check.wav" />
+    <None Remove="Assets\CursorB.cur" />
+    <None Remove="Assets\CursorW.cur" />
+    <None Remove="Assets\En.png" />
+    <None Remove="Assets\icon.ico" />
+    <None Remove="Assets\KingB.png" />
+    <None Remove="Assets\KingW.png" />
+    <None Remove="Assets\KnightB.png" />
+    <None Remove="Assets\KnightW.png" />
+    <None Remove="Assets\MoveSelf.wav" />
+    <None Remove="Assets\PawnB.png" />
+    <None Remove="Assets\PawnW.png" />
+    <None Remove="Assets\Promote.wav" />
+    <None Remove="Assets\QueenB.png" />
+    <None Remove="Assets\QueenW.png" />
+    <None Remove="Assets\RefreshB.png" />
+    <None Remove="Assets\RefreshW.png" />
+    <None Remove="Assets\RookB.png" />
+    <None Remove="Assets\RookW.png" />
+    <None Remove="Assets\Ru.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChessLogic\ChessLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\BishopB.png" />
+    <Resource Include="Assets\BishopW.png" />
+    <Resource Include="Assets\Board.png" />
+    <EmbeddedResource Include="Assets\Capture.wav" />
+    <EmbeddedResource Include="Assets\Castle.wav" />
+    <EmbeddedResource Include="Assets\Check.wav" />
+    <Resource Include="Assets\CursorB.cur" />
+    <Resource Include="Assets\CursorW.cur" />
+    <Resource Include="Assets\En.png" />
+    <Resource Include="Assets\icon.ico" />
+    <Resource Include="Assets\KingB.png" />
+    <Resource Include="Assets\KingW.png" />
+    <Resource Include="Assets\KnightB.png" />
+    <Resource Include="Assets\KnightW.png" />
+    <EmbeddedResource Include="Assets\MoveSelf.wav" />
+    <Resource Include="Assets\PawnB.png" />
+    <Resource Include="Assets\PawnW.png" />
+    <EmbeddedResource Include="Assets\Promote.wav" />
+    <Resource Include="Assets\QueenB.png" />
+    <Resource Include="Assets\QueenW.png" />
+    <Resource Include="Assets\RefreshB.png" />
+    <Resource Include="Assets\RefreshW.png" />
+    <Resource Include="Assets\RookB.png" />
+    <Resource Include="Assets\RookW.png" />
+    <Resource Include="Assets\Ru.png" />
+  </ItemGroup>
+
+</Project>
