@@ -5,3 +5,4 @@ Credits to OttoCode, this game was made with his guide: https://www.youtube.com/
 2. Game on time and time values
 3. Russian and english languages
 4. Small chess rules section
+5. Game sounds
